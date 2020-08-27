@@ -1,0 +1,104 @@
+extends base
+include _postCard
+
+block content
+  .container
+    .row
+      // Forum Tab
+      .col-xl-1.col-lg-2
+        nav.nav.d-flex.flex-lg-column.mb-3
+          a.nav-link.forum-tab.forum-tab-active(href='#') New
+          a.nav-link.forum-tab(href='#') Hot
+          a.nav-link.forum-tab(href='#') All
+      // Forum Card List
+      .col-xl-8.col-lg-10
+        button.btn.btn-block.btn-outline-primary.d-xl-none.mb-3
+          | Create Post
+    
+        // Forum Card
+        each post in posts
+          +postCard(post)
+
+      // Right Sidebar
+      .col-xl-3.d-none.d-xl-block
+        a.btn.btn-primary.btn-create-post(href='/create-post')
+          | Create Post
+        // Community Card
+        .community-rank-card.d-flex.flex-column.my-5
+          h5.mb-4 Top Communities
+          .mb-2.d-flex.justify-content-between
+            span.text-primary
+              img.community-rank-card-img(src='/img/communities/pics.jpg' alt='...')
+              |                 pics
+            span
+              span.text-info 40
+              i.fa.fa-arrow-up.text-primary
+          .mb-2.d-flex.justify-content-between
+            span.text-primary
+              img.community-rank-card-img(src='/img/communities/LifeProTips.jpg' alt='...')
+              |                 LifeProTips
+            span
+              span
+                span.text-info 40
+              i.fa.fa-arrow-up.text-primary
+          .mb-2.d-flex.justify-content-between
+            span.text-primary
+              img.community-rank-card-img(src='/img/communities/Instagram.jpg' alt='...')
+              |                 Instagram
+            span
+              span.text-info 40
+              i.fa.fa-arrow-up.text-primary
+          .mb-2.d-flex.justify-content-between
+            span.text-primary
+              img.community-rank-card-img(src='/img/communities/OutOfTheLoop.jpg' alt='...')
+              |                 OutOfTheLoop
+            span
+              span.text-info 40
+              i.fa.fa-arrow-up.text-primary
+          .mb-2.d-flex.justify-content-between
+            span.text-primary
+              img.community-rank-card-img(src='/img/communities/Europe.jpg' alt='...')
+              |                 Europe
+            span
+              span.text-info 40
+              i.fa.fa-arrow-up.text-primary
+          .mb-2.d-flex.justify-content-between
+            span.text-primary
+              img.community-rank-card-img(src='/img/communities/dataisbeautiful.jpg' alt='...')
+              |                 dataisbeautiful
+            span
+              span.text-info 40
+              i.fa.fa-arrow-up.text-primary
+          .mb-2.d-flex.justify-content-between
+            span.text-primary
+              img.community-rank-card-img(src='/img/communities/coronavirus.jpg' alt='...')
+              |                 Coronavirus
+            span
+              span.text-info 40
+              i.fa.fa-arrow-up.text-primary
+          .mb-2.d-flex.justify-content-between
+            span.text-primary
+              img.community-rank-card-img(src='/img/communities/damnthatsinteresting.jpg' alt='...')
+              |                 thatsinteresting
+            span
+              span.text-info 40
+              i.fa.fa-arrow-up.text-primary
+        // Information Box
+        .forum-info-box
+          .row
+            .col
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Help
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Topics
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') About
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Careers
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Contact
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Press
+            .col
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Advertise
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Blog
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Forum App
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Terms
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Privacy Policy
+          p.forum-info-box-item.mt-3
+            | The Forum Inc &copy; 2020. All Rights Reserved
+

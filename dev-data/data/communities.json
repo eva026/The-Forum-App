@@ -1,0 +1,81 @@
+[
+  {
+    "_id": "5f291ec40202d1cb0c3877b5",
+    "name": "pics",
+    "image": "pics.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nemo voluptas, est reprehenderit libero dignissimos. Fugit exercitationem eaque mollitia nulla.",
+    "users": [
+      "5c8a1d5b0190b214360dc057",
+      "5c8a1dfa2f8fb814b56fa181",
+      "5c8a1f292f8fb814b56fa184"
+    ]
+  },
+  {
+    "_id": "5f291ee0f588db236a5a8933",
+    "name": "Europe",
+    "image": "Europe.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nemo voluptas, est reprehenderit libero dignissimos. Fugit exercitationem eaque mollitia nulla.",
+    "users": [
+      "5c8a1e1a2f8fb814b56fa182",
+      "5c8a1dfa2f8fb814b56fa181",
+      "5c8a1f292f8fb814b56fa184"
+    ]
+  },
+  {
+    "_id": "5f291ee9b4e31136d1402a08",
+    "name": "Instagram",
+    "image": "Instagram.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nemo voluptas, est reprehenderit libero dignissimos. Fugit exercitationem eaque mollitia nulla.",
+    "users": ["5c8a1e1a2f8fb814b56fa182", "5c8a1ec62f8fb814b56fa183"]
+  },
+  {
+    "_id": "5f291ef39cf99c08f8a16ae8",
+    "name": "coronavirus",
+    "image": "coronavirus.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nemo voluptas, est reprehenderit libero dignissimos. Fugit exercitationem eaque mollitia nulla."
+  },
+  {
+    "_id": "5f291efb54d2005dd1e12955",
+    "name": "damnthatsinteresting",
+    "image": "damnthatsinteresting.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nemo voluptas, est reprehenderit libero dignissimos. Fugit exercitationem eaque mollitia nulla.",
+    "users": [
+      "5c8a1e1a2f8fb814b56fa184",
+      "5c8a1ec62f8fb814b56fa183",
+      "5c8a1f292f8fb814b56fa184"
+    ]
+  },
+  {
+    "_id": "5f291f03290f32acd66c5021",
+    "name": "LifeProTips",
+    "image": "LifeProTips.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nemo voluptas, est reprehenderit libero dignissimos. Fugit exercitationem eaque mollitia nulla.",
+    "users": [
+      "5c8a1f4e2f8fb814b56fa185",
+      "5c8a201e2f8fb814b56fa186",
+      "5c8a1d5b0190b214360dc057"
+    ]
+  },
+  {
+    "_id": "5f291f0b9036cae5eaa126bf",
+    "name": "OutOfTheLoop",
+    "image": "OutOfTheLoop.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nemo voluptas, est reprehenderit libero dignissimos. Fugit exercitationem eaque mollitia nulla.",
+    "users": [
+      "5c8a20d32f8fb814b56fa187",
+      "5c8a211f2f8fb814b56fa188",
+      "5c8a22c62f8fb814b56fa18b"
+    ]
+  },
+  {
+    "_id": "5f291f1ee2770732b6dd373f",
+    "name": "dataisbeautiful",
+    "image": "dataisbeautiful.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nemo voluptas, est reprehenderit libero dignissimos. Fugit exercitationem eaque mollitia nulla.",
+    "users": [
+      "5c8a1f292f8fb814b56fa184",
+      "5c8a1f4e2f8fb814b56fa185",
+      "5c8a211f2f8fb814b56fa188"
+    ]
+  }
+]

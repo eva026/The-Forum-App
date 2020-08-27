@@ -1,0 +1,50 @@
+extends base
+
+block content
+  .container
+    .row
+      // Left Side Tab
+      .col-md-2
+        nav.nav.d-flex.flex-lg-column.mb-3
+          a.nav-link.forum-tab.forum-tab-active(href='#') Settings
+          a.nav-link.forum-tab(href='#') My Posts
+      // Setting Area
+      .col-md-10.bg-white
+        // Forum Card
+        .p-4.mb-4
+          .row
+            .col-1
+            .col-10
+              h3.mt-5.mb-4.text-primary YOUR ACCOUNT SETTINGS
+              form.mb-5.form-user-data
+                .form-group
+                  label(for='name') Name
+                  input#name.form-control(type='text' value=`${user.name}`, required,name='name' aria-describedby='emailHelp')
+                .form-group
+                  label(for='email') Email address
+                  input#email.form-control(type='email' value=`${user.email}`, required, name='email' )
+                .form-group.mt-4
+                  img#output_image.form__user-photo(src=`/img/users/${user.photo}` alt='')
+                  input#photo.form__upload(type='file' accept='image/*' name='photo')
+                  label.form__label(for='photo') Choose new photo
+                .form-group
+                  .clearfix
+                    button.btn.btn-primary.px-4.float-right(type='submit')
+                      | SAVE SETTINGS
+              hr.horizontalLine
+              h3.mt-5.mb-4.text-primary PASSWORD CHANGE
+              form.form-user-settings
+                .form-group
+                  label(for='password-current') Current password
+                  input#password-current.form-control(type='password' placeholder='••••••••' required='' minlength='8' aria-describedby='emailHelp')
+                .form-group
+                  label(for='password') New password
+                  input#password.form-control(type='password' placeholder='••••••••' required='' minlength='8')
+                .form-group
+                  label(for='password-confirm') Confirm password
+                  input#password-confirm.form-control(type='password' placeholder='••••••••' required='' minlength='8')
+                .form-group.mt-4
+                  .clearfix
+                    button.btn.btn-primary.px-4.float-right.btn--save-password(type='submit')
+                      | SAVE PASSWORD
+            .col-1

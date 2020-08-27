@@ -1,0 +1,42 @@
+// Login Modal
+#loginModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+  .modal-dialog.modal-dialog-centered
+    .modal-content
+      .modal-header
+        button.close(type='button' data-dismiss='modal' aria-label='Close')
+          span(aria-hidden='true') &times;
+      .modal-body.px-5.pb-5
+        h5.text-primary.mb-4 LOG INTO YOUR ACCOUNT
+        form.login-form
+          .form-group
+            label(for='email') Email address
+            input#email.form-control.form-control-login.shadow-none(type='email' aria-describedby='emailHelp' placeholder='you@example.com' required='')
+          .form-group
+            label(for='password') Password
+            input#password.form-control.form-control-login.shadow-none(type='password' placeholder='••••••••' required='' minlength='8')
+          button.btn.btn-primary.px-4.mt-2(type='submit')
+            | LOG IN
+// Sign Modal
+#signupModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+  .modal-dialog.modal-dialog-centered
+    .modal-content
+      .modal-header
+        button.close(type='button' data-dismiss='modal' aria-label='Close')
+          span(aria-hidden='true') &times;
+      .modal-body.px-5.pb-5
+        h5.text-primary.mb-4 WELCOME TO THE FORUM!
+        form.signup-form
+          .form-group
+            label(for='signupName') Name
+            input#signupName.form-control.form-control-login.shadow-none(type='text' aria-describedby='emailHelp' placeholder='John' required='' minlength='3')
+          .form-group
+            label(for='signupEmail') Email address
+            input#signupEmail.form-control.form-control-login.shadow-none(type='email' aria-describedby='emailHelp' placeholder='you@example.com' required='')
+          .form-group
+            label(for='signupPassword') Password
+            input#signupPassword.form-control.form-control-login.shadow-none(type='password' placeholder='••••••••' required='' minlength='8')
+          .form-group
+            label(for='signupPasswordConfirm') Password Confirm
+            input#signupPasswordConfirm.form-control.form-control-login.shadow-none(type='password' placeholder='••••••••' required='' minlength='8')
+          button.btn.btn-primary.px-4.mt-2(type='submit')
+            | SIGN UP

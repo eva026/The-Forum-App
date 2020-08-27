@@ -1,0 +1,53 @@
+mixin postCard(post)
+  .forum-card.p-4.mb-4
+    .row
+      if user 
+        - let postId = post._id
+        if likes[postId]
+          .col-1.d-flex.flex-column.align-items-center
+            i.fa.fa-arrow-up.like(data-id=`${post._id}`)
+            - let num = post.liked.length - post.disliked.length
+            .num #{num}
+            i.fa.fa-arrow-down(data-id=`${post._id}`)
+        else if dislikes[postId]
+          .col-1.d-flex.flex-column.align-items-center
+            i.fa.fa-arrow-up(data-id=`${post._id}`)
+            - let num = post.liked.length - post.disliked.length
+            .num #{num}
+            i.fa.fa-arrow-down.dislike(data-id=`${post._id}`)
+        else
+          .col-1.d-flex.flex-column.align-items-center
+            i.fa.fa-arrow-up(data-id=`${post._id}`)
+            - let num = post.liked.length - post.disliked.length
+            .num  #{num}
+            i.fa.fa-arrow-down(data-id=`${post._id}`)
+      else 
+        .col-1.d-flex.flex-column.align-items-center
+          a(href='' aria-disabled='true' data-toggle='modal' data-target='#signupModal' class="text-info")
+            i.fa.fa-arrow-up
+          - let num = post.liked.length - post.disliked.length
+          |   #{num}
+          a(href='' aria-disabled='true' data-toggle='modal' data-target='#signupModal' class="text-info")
+            i.fa.fa-arrow-down
+
+      .col-10
+        h3
+          | #{post.title}
+          span.badge.badge-secondary.forum-card-badge
+            | #{post.community.name}
+        p=post.text
+          a.text-primary(href=`/post/${post.slug}`)
+            |  More 
+            i.fa.fa-arrow-right
+        if post.image
+          img.img-fluid(src=`/img/posts/${post.image}` alt='')
+        hr
+        .forum-card-meta.d-flex.justify-content-between
+          a.text-info.text-decoration-none.d-flex.align-items-center(href='#')
+            img.forum__user-photo.mr-1(src=`/img/users/${post.user.photo}` alt='')
+            span Posted by #{post.user.name}
+          span.text-info.post-time= post.createdAt
+          a.text-info(href='#')
+            i.fas.fa-comment
+            |   #{post.commentsQuantity}
+      .col-1

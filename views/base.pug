@@ -1,0 +1,29 @@
+doctype html
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Font Awesome
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css' integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp' crossorigin='anonymous')
+  // Google Font
+  link(href='https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap' rel='stylesheet')
+  
+  // CSS
+  link(rel='stylesheet' href='/css/main.css')
+  title The Forum | #{title}
+
+body(data-alert=`${alert ? alert : ''}`)
+  // HEADER
+  include _header
+
+  // CONTENT
+  block content
+    h1 This is a placeholder heading.
+    
+  // Modal
+  include _modal
+
+  // jQuery first, then Bootstrap JS
+  script(src='/js/jquery-3.5.1.slim.js')
+  script(src='/js/bootstrap.min.js')
+  script(src='/js/bundle.js')

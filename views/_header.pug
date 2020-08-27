@@ -1,0 +1,32 @@
+// Navbar
+nav.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top
+  a.navbar-brand.text-primary(href='/') The Forum
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+    i.fas.fa-bars.fa-1x.text-primary
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.ml-auto.d-block.d-lg-flex.align-items-center
+      if user
+        li.nav-item.mr-5
+          .input-group
+            input.form-control(type='text' placeholder='Search for Topics' aria-label="Recipient's username" aria-describedby='button-addon2' size='35')
+            .input-group-append
+              button#button-addon2.btn.btn-outline-primary(type='button')
+                i.fas.fa-search.forum-search-icon
+        li.nav-item
+          a.nav-link.btn.btn-outline-primary.btn-sm.px-4.mb-2.mb-lg-0.nav--logout(href='/') LOG OUT
+        li.nav-item
+          a.nav-link(href='/me' aria-disabled='true' d-flex='' align-items-center='')
+            span
+              img.nav__user-img.img-fluid(src=`/img/users/${user.photo}` alt='')
+              |         #{user.name}
+      else
+        li.nav-item.mr-5
+          .input-group
+            input.form-control(type='text' placeholder='Search for Topics' aria-label="Recipient's username" aria-describedby='button-addon2' size='35')
+            .input-group-append
+              button#button-addon2.btn.btn-outline-primary(type='button')
+                i.fas.fa-search.forum-search-icon
+        li.nav-item
+          a.nav-link.btn.btn-outline-primary.btn-sm.px-4.mb-2.mb-lg-0(href='' data-toggle='modal' data-target='#loginModal') LOG IN
+        li.nav-item
+          a.nav-link.btn.btn-primary.btn-sm.px-4.ml-lg-3.forum-nav-sign(href='' aria-disabled='true' data-toggle='modal' data-target='#signupModal') SIGN UP

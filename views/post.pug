@@ -1,0 +1,120 @@
+extends base
+include _commentItem
+
+block content
+  .container
+    .row
+      // Post Details
+      .col-xl-8.col-lg-12
+        button.btn.btn-block.btn-outline-primary.d-xl-none.mb-3
+          | Create Post
+        .forum-card.p-4.mb-4
+          .row
+            if user 
+              if like
+                .col-1.d-flex.flex-column.align-items-center
+                  i.fa.fa-arrow-up.text-primary(data-id=`${post._id}`)
+                  - let num = post.liked.length - post.disliked.length
+                    | #{num}
+                  i.fa.fa-arrow-down(data-id=`${post._id}`)
+              else if dislike
+                .col-1.d-flex.flex-column.align-items-center
+                  i.fa.fa-arrow-up(data-id=`${post._id}`)
+                  - let num = post.liked.length - post.disliked.length
+                    | #{num}
+                  i.fa.fa-arrow-down.text-secondary(data-id=`${post._id}`)
+              else 
+                .col-1.d-flex.flex-column.align-items-center
+                  i.fa.fa-arrow-up(data-id=`${post._id}`)
+                  - let num = post.liked.length - post.disliked.length
+                    | #{num}
+                  i.fa.fa-arrow-down(data-id=`${post._id}`)
+            else 
+              .col-1.d-flex.flex-column.align-items-center
+                a(href='' aria-disabled='true' data-toggle='modal' data-target='#signupModal' class="text-info")
+                  i.fa.fa-arrow-up
+                - let num = post.liked.length - post.disliked.length
+                |   #{num}
+                a(href='' aria-disabled='true' data-toggle='modal' data-target='#signupModal' class="text-info")
+                  i.fa.fa-arrow-down
+            .col-10
+              h3#post-detail-title.mb-3
+                | #{post.title}
+                span.badge.badge-secondary.forum-card-badge
+                  | #{post.community.name}
+              .forum-card-meta.d-flex.mb-3
+                span.text-info.text-decoration-none.d-flex.align-items-center.mr-3(href='#')
+                  img.forum__detail__user-photo.img-fluid.mr-1(src=`/img/users/${post.user.photo}` alt='')
+                  span Posted by #{post.user.name}
+                  span.text-info.ml-3.post-time= post.createdAt
+              if post.image
+                img.img-fluid.mb-3(src=`/img/posts/${post.image}` alt='')
+              p=post.text
+              
+              if user
+                form.form-create-comment
+                  .d-flex.mt-2.mb-3
+                    img.forum__detail__user-photo.mr-2(src=`/img/users/${user.photo}` alt='')
+                    textarea#comment.form-control(type='text' rows='3' placeholder='How do you think?')
+                    input#post-detail-id(type='hidden', name='post-detail-id' value=`${post._id}`)
+                    input#logged-user-id(type='hidden', name='logged-user-id' value=`${user._id}`)
+                    input#post-liked(type='hidden', name='post-liked' value=`${post.liked}`)
+                  .clearfix
+                    button.btn.btn-primary.btn-sm.col-sm-6.col-md-4.float-right(type='submit') Post Comment
+              else
+                .d-flex.border.border-muted.rounded.justify-content-between.p-3.align-items-center
+                  span.text-muted
+                    | Log in or sign up to leave a comment
+                  div
+                    button.btn.btn-outline-primary.btn-sm.px-3(type='button' href='' data-toggle='modal' data-target='#loginModal') LOG IN
+                    button.btn.btn-primary.btn-sm.px-3.ml-2(type='button' href='' aria-disabled='true' data-toggle='modal' data-target='#signupModal') SIGN UP
+              // Comment
+              #comment-list.mt-3
+                h5 #{post.commentsQuantity} Comments
+                // Single Comment
+                each comment in post.comments
+                  +commentItem(comment)
+
+            .col-1
+      // Right Sidebar
+      .col-xl-4.d-none.d-xl-block
+        .card.community-detail-card.mb-4
+          .card-header.bg-primary.community-detail-card-header
+            | About Community
+          .card-body
+            .mb-3
+              img.community-detail-card-image.mr-2(src=`/img/communities/${post.community.image}` alt='')
+              span.community-detail-name #{post.community.name}
+            p Welcome to #{post.community.name}
+            .d-flex
+              ul.text-center
+                li.community-detail-number 300
+                li Members
+              ul.text-center
+                li.community-detail-number 60
+                li Online
+            .horizontalLine.mb-3
+            p
+              i.fas.fa-calendar-day.text-primary.mr-1
+              |  Created
+              |                 2020/04/26
+            .btn.btn-outline-primary.d-block JOIN
+            a.btn.btn-primary.d-block.mt-3(href='/create-post') Create Post
+        // Information Box
+        .forum-info-box
+          .row
+            .col
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Help
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Topics
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') About
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Careers
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Contact
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Press
+            .col
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Advertise
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Blog
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Forum App
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Terms
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Privacy Policy
+          p.forum-info-box-item.mt-3
+            | The Forum Inc &copy; 2020. All Rights Reserved

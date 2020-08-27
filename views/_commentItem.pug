@@ -1,0 +1,10 @@
+mixin commentItem(comment)
+  .d-flex.align-items-start.mb-3
+    img.comment__user-photo.mr-2(src=`/img/users/${comment.user.photo}` alt='')
+    .d-flex.flex-column
+      .mb-2
+        span.mr-2.comment__user-name= comment.user.name
+        | #{comment.comment}
+      div
+        i.fas.fa-thumbs-up.mr-3.text-muted  22
+        span.text-muted 3d ago

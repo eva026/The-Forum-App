@@ -1,0 +1,72 @@
+extends base
+
+block content 
+
+  .container
+    .row
+      // Post Details
+      .col-xl-8.col-lg-12
+        .row.justify-content-start
+          .col-12
+            .card.p-3.bg-white
+              h4.mb-3.text-primary Create a post
+              form.form-create-post
+                .form-group
+                  select#community-select.form-control.col-5
+                    option(value='' selected='' disabled='') Choose a community
+                    option(value='5f291ec40202d1cb0c3877b5') pics
+                    option(value='5f291f03290f32acd66c5021') LifeProTips 
+                    option(value='5f291ee9b4e31136d1402a08')  Instagram 
+                    option(value='5f291f0b9036cae5eaa126bf') OutOfTheLoop 
+                    option(value='5f291ee0f588db236a5a8933') Europe 
+                    option(value='5f291f1ee2770732b6dd373f') dataisbeautiful 
+                    option(value='5f291ef39cf99c08f8a16ae8') Coronavirus 
+                    option(value='5f291efb54d2005dd1e12955')
+                      | thatsinteresting
+                .form-group
+                  input#post-title.form-control(type='text' placeholder='Title')
+                .form-group
+                  textarea#post-text.form-control(type='text' rows='8' placeholder='Text (Optional)')
+                .form-group
+                  img#output.d-none.post__preview-image(width='150' height='150')
+                  input#post-image.form__upload(type='file' accept='image/*,' name='post-image')
+                  label.form__label(for='post-image') Upload image (Optional)
+                .clearfix
+                  button.btn.btn-primary.btn-sm.px-5.float-right(type='submit')
+                    | POST
+      // Right Sidebar
+      .col-xl-4.d-none.d-xl-block
+        .mb-4.bg-white.community-rule-card.rounded
+          ul.list-group.list-group-flush
+            li.list-group-item.mx-3.d-flex.align-items-center
+              img.img-community-rule.mr-2(src='/img/communities/community-rule.jpg' alt='')
+              h6.community-rule-card-heading
+                | Posting to The Forum
+            li.list-group-item.mx-3.community-rule-card-text
+              | 1. Good Grammar, Spelling, And Use Of Language
+            li.list-group-item.mx-3.community-rule-card-text
+              | 2. Be Friendly And Cheerful
+            li.list-group-item.mx-3.community-rule-card-text
+              | 3. Stay On Topic
+            li.list-group-item.mx-3.community-rule-card-text
+              | 4. Search for duplicates before posting
+            li.list-group-item.mx-3.community-rule-card-text
+              | 5. Read the community&rsquo;s rules
+        // Information Box
+        .forum-info-box
+          .row
+            .col
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Help
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Topics
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') About
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Careers
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Contact
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Press
+            .col
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Advertise
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Blog
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Forum App
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Terms
+              a.d-block.forum-info-box-item.text-decoration-none(href='#') Privacy Policy
+          p.forum-info-box-item.mt-3
+            | The Forum Inc &copy; 2020. All Rights Reserved
