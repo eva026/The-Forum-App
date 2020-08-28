@@ -12,17 +12,24 @@ block content
           a.nav-link.forum-tab(href='#') All
       // Forum Card List
       .col-xl-8.col-lg-10
-        button.btn.btn-block.btn-outline-primary.d-xl-none.mb-3
-          | Create Post
-    
+        if user
+          a.btn.btn-block.btn-outline-primary.d-xl-none.mb-3(href='/create-post')
+            | Create Post
+        else 
+          a.btn.btn-block.btn-outline-primary.d-xl-none.mb-3(href='' aria-disabled='true' data-toggle='modal' data-target='#signupModal')
+            | Create Post
         // Forum Card
         each post in posts
           +postCard(post)
 
       // Right Sidebar
       .col-xl-3.d-none.d-xl-block
-        a.btn.btn-primary.btn-create-post(href='/create-post')
-          | Create Post
+        if user
+          a.btn.btn-primary.btn-create-post(href='/create-post')
+            | Create Post
+        else 
+          a.btn.btn-primary.btn-create-post(href='' aria-disabled='true' data-toggle='modal' data-target='#signupModal')
+            | Create Post
         // Community Card
         .community-rank-card.d-flex.flex-column.my-5
           h5.mb-4 Top Communities

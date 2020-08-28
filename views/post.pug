@@ -6,8 +6,12 @@ block content
     .row
       // Post Details
       .col-xl-8.col-lg-12
-        button.btn.btn-block.btn-outline-primary.d-xl-none.mb-3
-          | Create Post
+        if user
+          a.btn.btn-block.btn-outline-primary.d-xl-none.mb-3(href='/create-post')
+            | Create Post
+        else 
+          a.btn.btn-block.btn-outline-primary.d-xl-none.mb-3(href='' aria-disabled='true' data-toggle='modal' data-target='#signupModal')
+            | Create Post
         .forum-card.p-4.mb-4
           .row
             if user 
@@ -99,7 +103,10 @@ block content
               |  Created
               |                 2020/04/26
             .btn.btn-outline-primary.d-block JOIN
-            a.btn.btn-primary.d-block.mt-3(href='/create-post') Create Post
+            if user
+              a.btn.btn-primary.d-block.mt-3(href='/create-post') Create Post
+            else 
+              a.btn.btn-primary.d-block.mt-3(href='' aria-disabled='true' data-toggle='modal' data-target='#signupModal') Create Post
         // Information Box
         .forum-info-box
           .row
